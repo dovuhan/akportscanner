@@ -12,7 +12,7 @@
 `Bu depoyu klonlayın veya indirin.`
 
 ```bash
-git clone https://github.com/akportscanner/portscan.py
+git clone https://github.com/akportscanner/port-scan.py
 cd PortScanner
 ```
 
@@ -22,7 +22,7 @@ Python 3.x sürümüne sahip olduğunuzdan emin olun.
 ```bash Kullanım
 bash 
 Copy code
-python3 portscanner.py
+python3 port-scan.py
 Bu komutu çalıştırdıktan sonra, taramak istediğiniz IP adresini/aralığını ve port aralığını girmeniz istenecektir.
 ```
 
