@@ -12,7 +12,7 @@
 `Bu depoyu klonlayın veya indirin.`
 
 ```bash
-git clone https://github.com/[kullanici_adi]/PortScanner.git
+git clone https://github.com/akportscanner/portscan.py
 cd PortScanner
 ```
 
