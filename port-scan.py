@@ -4,7 +4,10 @@ import concurrent.futures
 
 def get_service(port):
     """Port numarasına göre yaygın servis adını döndürür."""
-    service_name = socket.getservbyport(port, 'tcp')
+    try:
+        service_name = socket.getservbyport(port, 'tcp')
+    except OSError:
+        return 'Unknown'
     return service_name or 'Unknown'
 
 
