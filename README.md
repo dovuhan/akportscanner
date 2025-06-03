@@ -1,12 +1,14 @@
 # PortScanner
 
 ## Açıklama
-`PortScanner`, belirtilen bir IP adresine veya IP aralığındaki belirtilen portlarda hangi portların açık olduğunu kontrol eden basit ve etkili bir araçtır.
+`PortScanner`, girilen IP adreslerinde belirtilen portların durumunu hızlı bir şekilde kontrol eden basit fakat esnek bir araçtır.
 
 ## Özellikler
-- `Tek bir IP adresi veya IP aralığı için port taraması.`
-- `Hızlı tarama için çoklu iş parçacığı desteği.`
-- `Esnek port aralığı seçimi.`
+- `Tek bir IP adresi veya ağ bloğu için tarama`
+- `Argparse tabanlı komut satırı arayüzü`
+- `Çoklu iş parçacığı ile hızlı tarama ve iş parçacığı sayısını ayarlayabilme`
+- `Virgül ve aralık tabanlı esnek port seçimi (ör. 22,80,8000-8100)`
+- `Sonuçları JSON dosyasına kaydedebilme`
 
 ## Kurulum
 `Bu depoyu klonlayın veya indirin.`
@@ -19,12 +21,15 @@ cd PortScanner
 Python 3.x sürümüne sahip olduğunuzdan emin olun.
 
 
-```bash Kullanım
-bash 
-Copy code
-python3 port-scan.py
-Bu komutu çalıştırdıktan sonra, taramak istediğiniz IP adresini/aralığını ve port aralığını girmeniz istenecektir.
+### Kullanım
+```bash
+python3 port-scan.py -t 192.168.1.0/24 -p 22,80,8000-8100 -w 50 -o sonuc.json
 ```
+Parametreler:
+- `-t / --target` : Tarama yapılacak tek bir IP adresi veya ağ bloğu.
+- `-p / --ports`  : Virgüller ve aralıklarla belirtilecek port listesi.
+- `-w / --workers`: İsteğe bağlı iş parçacığı (thread) sayısı. Varsayılan **100**.
+- `-o / --output` : Sonuçların yazılacağı JSON dosyası.
 
 ```Uyarı```
 PortScanner'ı yalnızca kendi sistemlerinizde veya açıkça izin verilen sistemlerde kullanın. İzinsiz bir şekilde başka bir bilgisayarda port taraması yapmak yasa dışıdır ve etik olmayan bir davranıştır.
